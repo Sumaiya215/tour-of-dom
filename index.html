@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+      .fruits-container li{
+            color:tomato;
+        }
+        #fruits-title{
+            color:black;
+        }
+        .important-places{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure nam consectetur deleniti, eius omnis modi aspernatur quas magni odio quisquam fugit nobis voluptatibus. Asperiores enim ducimus illum magnam praesentium earum.</p>
+
+    </header>
+    <main id="main-container">
+        <section>
+         <h1 id ="heading"> My Awesome DOM</h1>
+        <ul>
+            <li>Mango</li>
+            <li>Banana</li>
+            <li>Apple</li>
+            <li>Orange</li>
+        </ul>
+        </section>
+        <section  class="fruits-container">
+            <h1 id="fruits-title" class="some-class random-class blue-bg">Fruits I like to eat</h1>
+            <ul>
+                <li>Grapes</li>
+                <li>Water Melon</li>
+                <li>Carrot</li>
+            </ul>
+        </section>
+        <section id="places-container" class="large-text">
+            <h1 id="places-title">Places I like to visit</h1>
+            <ul id="places-list">
+                <li class="important-places">Sundarbon</li>
+                <li class="important-places">Bandorbon</li>
+                <li class="important-places">Katabon</li>
+                <li class="other-place">Shalbon</li>
+            </ul>   
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script src="js/append.js"></script>
+    <script src="js/styleInJs.js"></script>
+    
+    <script>
+        // const student = {
+        //     name:'ABUL',
+        //     ID :11,
+        //     study: function(time){
+        //         console.log(time,"study time:");
+        //     }
+        // }
+        // console.log("Adding JS inside the HTML file");
+
+        const liCollection = document.getElementsByTagName('li');
+        for(const li of liCollection){
+            // console.log(li.innerText);
+        }
+
+        const allHeadings =document.getElementsByTagName('h1');
+        for(const h1 of allHeadings){
+            // console.log(h1);
+        }
+
+        const fruitsTitle = document.getElementById('fruits-title');
+        fruitsTitle.innerText = 'Fruits changed by JS';
+
+        const places = document.getElementsByClassName('important-places');
+        for(const place of places){
+            // console.log(place.innerText);
+        }
+
+        // querySelectorAll
+        const someLi = document.querySelectorAll('.fruits-container li');
+        for(const li of someLi){
+            // console.log(li);
+        }
+
+    </script>
+</body>
+</html>
